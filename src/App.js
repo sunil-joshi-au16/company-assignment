@@ -1,11 +1,7 @@
-import Fetch from "./crud";
+import Home from './container/home'
 
 function App() {
-  return (
-    <div>
-      <Fetch />
-    </div>
-  );
+  return <Home />;
 }
 
 export default App;
