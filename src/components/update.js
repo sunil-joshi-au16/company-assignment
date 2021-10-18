@@ -6,6 +6,12 @@ function Update({ employees, isOpen, closeModal, handleEdit }) {
   const [empsal, setEmpsal] = useState("");
   const [empage, setEmpage] = useState("");
 
+  const handleClick = () => {
+    setEmpname("");
+    setEmpsal("");
+    setEmpage("");
+  };
+
   return (
     <div>
       <Modal show={isOpen} onHide={closeModal}>
@@ -13,7 +19,12 @@ function Update({ employees, isOpen, closeModal, handleEdit }) {
           <Modal.Title>Edit</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form onSubmit={(e) => handleEdit(e)}>
+          <Form
+            onSubmit={(e) => {
+              handleClick();
+              handleEdit(e);
+            }}
+          >
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label>Employee Name</Form.Label>
               <Form.Control

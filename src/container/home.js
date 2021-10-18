@@ -3,10 +3,11 @@ import axios from "axios";
 import Read from "../components/read";
 import Update from "../components/update";
 
+let tempEmployees, empId;
+
 function Home() {
   let [employees, setEmployees] = useState([]);
   const [isOpen, setIsopen] = useState(false);
-  let tempEmployees, empId;
 
   const openModal = (id) => {
     console.log(id);
